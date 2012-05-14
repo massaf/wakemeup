@@ -1,7 +1,7 @@
 {
   "name": "wakemeup",
-  "version": "0.0.1",
-  "description": "A simple web app utilizing Wake on Lan to wake up hosts.",
+  "version": "0.1.0",
+  "description": "Web app utilizing Wake on Lan to wake up hosts.",
   "author": {
     "name": "Jasper Lievisse Adriaanse",
     "email": "jasper@humppa.nl"

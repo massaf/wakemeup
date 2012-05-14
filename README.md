@@ -7,8 +7,10 @@ Introduction
 Wake Me Up is a one purpose web application that utilizes the Wake on
 Lan magic frame to wake up hosts on the network.
 
-It's far from production ready yet (lots of cleanup and validation
-need to be implemented still), but the prototype works.
+ToDo
+----
+
+* Easier management of hosts/mac addresses (w/ sqlite)
 
 Author
 -----
