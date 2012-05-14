@@ -21,6 +21,16 @@ var wol    = require('wake_on_lan');
 var config = require('./config');
 
 var WakeUp = function(host) {
+  /*
+   * Allow the configuration options that wake_on_lan.js accepts to be set
+   * in config.js so they can be passed on.
+   */
+  var options = {};
+  options.address     = config.wol_address;
+  options.num_packets = config.wol_num_packets;
+  options.interval    = config.wol_interval;
+  options.port        = config.wol_port;
+
   try {
     wol.wake(host, null);
   } catch (err) {
