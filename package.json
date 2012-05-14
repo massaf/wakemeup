@@ -6,6 +6,7 @@
     "name": "Jasper Lievisse Adriaanse",
     "email": "jasper@humppa.nl"
   },
+  "license": "BSD",
   "repository": {
      "type": "git",
      "url": "git://github.com/jasperla/wakemeup.git"
@@ -22,5 +23,5 @@
   },
   "engines": {
     "node": ">= 0.6.0"
-  }
+  },
 }
