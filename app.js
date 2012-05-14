@@ -35,6 +35,9 @@ app.post('/wake/', function(req, res) {
   /* Just redirect to /, untill we properly handle the return code from wakeup(). */
   res.redirect('/');
 });
+app.get('/wake/', function(req, res) {
+  res.redirect('/');
+});
 
 app.listen(config.port, config.address, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

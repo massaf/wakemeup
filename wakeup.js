@@ -1,10 +1,19 @@
-var util = require('util');
-var exec = require('child_process').exec;
+var util   = require('util');
+var exec   = require('child_process').exec;
 var config = require('./config');
 
 valid_host = function(host) {
-  /* XXX: Do something...  */
-  return true;
+  /* If the host contains a semi colon, we assume it's a mac address. */
+  if (/:/.test(host)) {
+    if (/^([0-9a-f]{2}([:-]|$)){6}$/i.test(host)) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    /* Not much more to validate, just return. */
+    return true;
+  }
 }
 
 module.exports.wakeup = function(host) {
