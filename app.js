@@ -45,7 +45,7 @@ app.configure('production', function(){
 /* Routes */
 app.get('/', routes.index);
 app.post('/wake/', function(req, res) {
-  var rc = wakeup.wakeup(req.body.host);
+  var rc = wakeup.WakeUp(req.body.host);
   if (rc.rc > 0) {
     res.render('fail', { title: "Error!", error: rc.str});
   } else {
