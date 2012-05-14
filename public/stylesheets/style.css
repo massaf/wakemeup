@@ -42,3 +42,11 @@ input[type="submit"] {
   background: #46483e;
   color: #c6e567;
 }
+
+#footer {
+  margin: 150px auto 55px auto;
+  color: #666;
+  width: 40%;
+  border-top:1px solid #8cc84b;
+  line-height:1em;
+}
