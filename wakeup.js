@@ -14,12 +14,7 @@ module.exports.wakeup = function(host) {
    * doing any actions that require the elevated priviledges.
    */
   if (valid_host(host)) {
-    var command;
-    var sudo = "";
-    if (config.use_sudo) {
-      sudo = "sudo";
-    }
-    command = util.format("%s %s %s %s", sudo, config.wol_path,
+    var command = util.format("%s %s %s %s", config.sudo, config.wol_path,
 			  config.wol_args, host);
     var child = exec(command, function (error, stdout, stderr) {
       if (stdout) {
