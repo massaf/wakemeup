@@ -15,10 +15,12 @@ module.exports.wakeup = function(host) {
    */
   if (valid_host(host)) {
     var command;
+    var sudo = "";
     if (config.use_sudo) {
-      command = "sudo ";
+      sudo = "sudo";
     }
-    command = command + config.wol_path + " " + config.wol_args + " " + host;
+    command = util.format("%s %s %s %s", sudo, config.wol_path,
+			  config.wol_args, host);
     var child = exec(command, function (error, stdout, stderr) {
       if (stdout) {
         util.print('stdout: ' + stdout);
