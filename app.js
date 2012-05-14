@@ -4,7 +4,8 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , wakeup = require('./wakeup');
+  , wakeup = require('./wakeup')
+  , config = require('./config');
 
 var app = module.exports = express.createServer();
 
@@ -35,6 +36,6 @@ app.post('/wake/', function(req, res) {
   res.redirect('/');
 });
 
-app.listen(3000, "192.168.178.89", function(){
+app.listen(config.port, config.address, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });

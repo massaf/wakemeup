@@ -1,5 +1,6 @@
 var util = require('util');
 var exec = require('child_process').exec;
+var config = require('./config');
 
 valid_host = function(host) {
   /* XXX: Do something...  */
@@ -13,7 +14,12 @@ module.exports.wakeup = function(host) {
    * doing any actions that require the elevated priviledges.
    */
   if (valid_host(host)) {
-    var child = exec("sudo arp -W " + host, function (error, stdout, stderr) {
+    var command;
+    if (config.use_sudo) {
+      command = "sudo ";
+    }
+    command = command + config.wol_path + " " + config.wol_args + " " + host;
+    var child = exec(command, function (error, stdout, stderr) {
       if (stdout) {
         util.print('stdout: ' + stdout);
       }
