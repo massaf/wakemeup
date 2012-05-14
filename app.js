@@ -32,10 +32,10 @@ app.configure('production', function(){
 app.get('/', routes.index);
 app.post('/wake/', function(req, res) {
   var rc = wakeup.wakeup(req.body.host);
-	if (rc.rc > 0) {
-    res.redirect('/fail');
+  if (rc.rc > 0) {
+    res.render('fail', { title: "Error!", error: rc.str});
   } else {
-    /* Just redirect to /, untill we properly handle the return code from wakeup(). */
+    /* Nothing to report in case of success, just return. */
     res.redirect('/');
   }
 });

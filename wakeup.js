@@ -41,7 +41,7 @@ module.exports.wakeup = function(host) {
       }
     });
   } else {
-    return { "rc": 3,
+    return { "rc": 4,
              "str": "Invalid hostname/mac address passed." };
   }
 
