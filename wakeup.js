@@ -25,19 +25,26 @@ module.exports.wakeup = function(host) {
   if (valid_host(host)) {
     var command = util.format("%s %s %s %s", config.sudo, config.wol_path,
 			  config.wol_args, host);
+
     var child = exec(command, function (error, stdout, stderr) {
       if (stdout) {
-        util.print('stdout: ' + stdout);
+        return { "rc": 1,
+                 "str": stdout };
       }
       if (stderr) {
-        util.print('stderr: ' + stderr);
+        return { "rc": 2,
+                 "str": stderr };
       }
       if (error !== null) {
-        console.log('exec error: ' + error);
+        return { "rc": 3,
+                 "str": error };
       }
     });
   } else {
-    /* Do something, the passed host is not deemed valid. */
-    console.log("Invalid hostname passed!");
+    return { "rc": 3,
+             "str": "Invalid hostname/mac address passed." };
   }
+
+  return { "rc": 0,
+           "str": null };
 }

@@ -31,9 +31,13 @@ app.configure('production', function(){
 // Routes
 app.get('/', routes.index);
 app.post('/wake/', function(req, res) {
-  wakeup.wakeup(req.body.host)
-  /* Just redirect to /, untill we properly handle the return code from wakeup(). */
-  res.redirect('/');
+  var rc = wakeup.wakeup(req.body.host);
+	if (rc.rc > 0) {
+    res.redirect('/fail');
+  } else {
+    /* Just redirect to /, untill we properly handle the return code from wakeup(). */
+    res.redirect('/');
+  }
 });
 app.get('/wake/', function(req, res) {
   res.redirect('/');
