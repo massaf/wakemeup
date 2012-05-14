@@ -32,7 +32,7 @@ var WakeUp = function(host) {
   options.port        = config.wol_port;
 
   try {
-    wol.wake(host, null);
+    wol.wake(host, options);
   } catch (err) {
     return { "rc": 1, "str": err };
   }
