@@ -1,0 +1,26 @@
+{
+  "name": "wakemeup",
+  "version": "0.0.1",
+  "description": "A simple web app utilizing Wake on Lan to wake up hosts.",
+  "author": {
+    "name": "Jasper Lievisse Adriaanse",
+    "email": "jasper@humppa.nl"
+  },
+  "repository": {
+     "type": "git",
+     "url": "git://github.com/jasperla/wakemeup.git"
+  },
+  "keywords": {
+    "express",
+    "wol",
+    "wake on lan",
+    "arp"
+  },
+  "dependencies": {
+     "express": "2.5.8"
+   , "jade": ">= 0.0.1"
+  },
+  "engines": {
+    "node": ">= 0.6.0"
+  }
+}

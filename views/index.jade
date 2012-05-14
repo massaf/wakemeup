@@ -1,0 +1,12 @@
+#header
+  p
+    h1= title
+
+p Wake up snorring hosts using 
+  a(href="http://en.wikipedia.org/wiki/Wake-on-LAN") Wake on Lan.
+
+p You can either either a hostname that's been set in /etc/ethers, or an ethernet address.
+
+form(action="/wake/", method="post", enctype="application/x-www-form-urlencoded")
+  input(type="text", name="host", id="host")
+  input(type="submit", value="Wake Up!")

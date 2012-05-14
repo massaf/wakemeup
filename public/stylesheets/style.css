@@ -1,0 +1,44 @@
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: #46483e;
+  color:#c6e567;
+  border-top: 1px #8cc84b solid;
+  border-right: 1px #8cc84b solid;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+#header {
+  margin:10px auto;
+  color:#8BC84B;
+  font-size:4.7em;
+  letter-spacing:-5px;
+}
+
+h1,h2 {
+  color: #669a30;
+}
+
+h1:hover {
+  color: #fba919;
+}
+
+a {
+  color: #C0C0C0;
+}
+
+input[type="text"] {
+  border: 2px solid #8cc84b;
+  background: #46483e;
+  color: #c6e567;
+}
+
+input[type="submit"] {
+  border: 1px solid #8cc84b;
+  background: #46483e;
+  color: #c6e567;
+}
