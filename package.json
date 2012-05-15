@@ -15,7 +15,7 @@
     "express",
     "wol",
     "wake on lan",
-    "arp"
+    "ethernet"
   ],
   "dependencies": {
      "express": "2.5.8"
